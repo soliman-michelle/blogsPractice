@@ -1,0 +1,21 @@
+{
+   "blogs": [
+    {
+        "title": "Tips on how to be Productive", 
+        "body": "lorem ipsum...", 
+        "author": "Michelle", 
+        "id": 1
+    },
+        {
+        "title": "Master Java", 
+        "body": "lorem ipsum...", 
+        "author": "Junie", 
+        "id": 2},
+        {
+        "title": "Intro to React", 
+        "body": "lorem ipsum...", 
+        "author": "Michelle", 
+        "id": 3
+    }
+   ]
+}
