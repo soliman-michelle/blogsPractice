@@ -2,7 +2,7 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
-    const {data : blogs, isPending, Error} = useFetch('http://localhost:8080/blogs');
+    const {data : blogs, isPending, error} = useFetch('http://localhost:8080/blogs');
   return (
     <div className="home">
       {error && <div>{error} </div>}
