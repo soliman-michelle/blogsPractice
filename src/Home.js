@@ -1,29 +1,11 @@
-import { useState, useEffect} from "react";
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-
-  useEffect(() =>{
-    setTimeout(() => {
-      fetch('http://localhost:8080/blogs')
-    .then(res => {
-      
-      return res.json()
-    })
-    .then(data => {
-      setBlogs(data);
-      setIsPending(false);
-    })
-    .catch((err) =>{
-      console.log(err.message);
-    })
-    }, 1000);
-  }, []);
-
+    const {data : blogs, isPending, Error} = useFetch('http://localhost:8080/blogs');
   return (
     <div className="home">
+      {error && <div>{error} </div>}
       {isPending && <div>Loading...</div>}
       {/* evaluate from left to right since blogs == null, it is false and it will perform the right expression */}
     { blogs && <BlogList blogs={blogs} title="All Skills" />}
